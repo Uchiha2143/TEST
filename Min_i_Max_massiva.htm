@@ -1,0 +1,76 @@
+<html>
+
+<head>
+
+<style>
+button {border-radius:20%; padding:20px; margin:20px; background:burlywood; border:solid 3px; border-color:black; width:150px; transition:0,5s;}
+button:hover {background:aliceblue; border-radius:15%;}
+new Array {font-family:Arial; color:black;} 
+</style>
+
+<script>
+
+function LAVITA() {
+document.write ("<h1><font color=red> Минимум и максимум</font></h1>");
+n=prompt ("Введи количество элементов","");
+n=parseInt (n);
+var a = new Array();
+document.write ("<table border=1 width=80%><tr>");
+
+for (i=1; i<=n; i++) {
+ document.write ("<td>"+i+"</td>");
+ 
+ }
+ document.write ("</tr><tr>");
+ for (i=1; i<=n; i++) {
+ a[i]=Math.floor(-50+Math.random()*70);
+ document.write ("<td>"+a[i]+"</td>");
+ }
+  document.write ("</tr></table>");
+var min=a[1]; 
+var k=1;
+ for (i=2; i<=n-1; i++) {
+  if (a[i]<min) { min=a[i]; k=i }
+ }
+document.write ("Мин элемент = "+min+" и его номер "+k);
+}
+
+
+
+
+
+function Telo () {
+document.write ("<h1><font color=red> Температура за декаду месяца (подневно)</font></h1>");
+var A = new Array ();
+k=0;
+document.write ("<table border=1 width=80%><tr>");
+ for (i=1; i<=10; i++) {
+ A[i]=Math.floor(-30+Math.random()*60);
+ document.write ("<td>"+A[i]+"</td>");
+ }
+document.write ("</tr></table>");
+var max=A[1];
+ for (i=1; i<=10; i++) {
+  if (A[i]>max) { max=A[i]}
+ }
+document.write ("Максимальная температура за декаду месяца: "+max+"<br>");
+ for (i=1; i<=10; i++) {
+  if (A[i]==max) { k++ }
+ }
+document.write ("Кол-во дней с максимальной температурой: "+k+"<br>");
+}
+
+
+
+
+
+</script>
+</head>
+
+<body bgcolor=lightsteelblue>
+
+<button onClick=LAVITA()> minmax</button>
+<button onClick=Telo()> Температура</button>
+
+</body>
+</html>
